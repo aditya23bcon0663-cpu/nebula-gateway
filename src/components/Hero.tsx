@@ -1,77 +1,89 @@
 import { motion } from "framer-motion";
-import { ArrowRight, PlayCircle, BookOpen, Users, Award } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center hero-pattern overflow-hidden">
-      {/* Decorative shapes */}
-      <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-primary/5 blur-3xl" />
-      <div className="absolute bottom-10 left-10 w-56 h-56 rounded-full bg-accent/8 blur-3xl" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
+      {/* Grid overlay */}
+      <div className="absolute inset-0 grid-pattern opacity-30" />
 
-      <div className="container mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <span className="section-badge mb-6">🎓 Trusted by 500+ Students</span>
+      {/* Floating orbs */}
+      <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-primary/5 blur-3xl animate-float" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-accent/5 blur-3xl animate-float" style={{ animationDelay: "3s" }} />
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold leading-tight mb-6 text-foreground">
-              Empowering Students for{" "}
-              <span className="text-primary">Academic Excellence</span>
-            </h1>
+      {/* Scattered node dots */}
+      {[
+        { top: "15%", left: "10%" },
+        { top: "30%", right: "15%" },
+        { top: "60%", left: "20%" },
+        { bottom: "25%", right: "25%" },
+        { top: "20%", left: "60%" },
+        { bottom: "40%", left: "8%" },
+      ].map((pos, i) => (
+        <div
+          key={i}
+          className="node-dot"
+          style={{ ...pos, animationDelay: `${i * 0.5}s` }}
+        />
+      ))}
 
-            <p className="text-lg text-muted-foreground max-w-lg mb-8 leading-relaxed">
-              Join Lords Coaching and achieve your dreams with expert guidance, personalized attention, and a proven track record of success.
-            </p>
+      <div className="relative z-10 container mx-auto px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 mb-8">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
+            <span className="text-sm text-primary font-medium">Next-Gen Infrastructure</span>
+          </div>
+        </motion.div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-base px-8 py-6 shadow-lg shadow-primary/25 group">
-                Enroll Now
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button variant="outline" size="lg" className="text-base px-8 py-6 group">
-                <PlayCircle className="mr-2 h-5 w-5" />
-                Book Free Demo
-              </Button>
-            </div>
-          </motion.div>
+        <motion.h1
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-tight tracking-tight mb-6 text-balance"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+        >
+          Building the Future
+          <br />
+          <span className="gradient-text">of Digital Networks</span>
+        </motion.h1>
 
-          {/* Visual cards */}
-          <motion.div
-            className="relative hidden lg:block"
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            <div className="grid grid-cols-2 gap-5">
-              {[
-                { icon: BookOpen, label: "Expert Curriculum", desc: "Structured for results", color: "bg-primary/10 text-primary" },
-                { icon: Users, label: "Small Batches", desc: "Max 25 students", color: "bg-accent/10 text-accent" },
-                { icon: Award, label: "Top Results", desc: "95%+ success rate", color: "bg-success/10 text-success" },
-                { icon: ArrowRight, label: "Career Guidance", desc: "Beyond academics", color: "bg-primary/10 text-primary" },
-              ].map((item, i) => (
-                <motion.div
-                  key={item.label}
-                  className="bg-card rounded-2xl border border-border p-6 shadow-sm card-lift"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                >
-                  <div className={`w-11 h-11 rounded-xl ${item.color} flex items-center justify-center mb-3`}>
-                    <item.icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="font-display font-semibold text-sm mb-1">{item.label}</h3>
-                  <p className="text-xs text-muted-foreground">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+        <motion.p
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 text-balance"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          Empowering businesses with cutting-edge network solutions. Secure, scalable, and designed for the demands of tomorrow.
+        </motion.p>
+
+        <motion.div
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.45 }}
+        >
+          <Button size="lg" className="text-base px-8 py-6 glow-border group hover-scale">
+            Get Started
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Button>
+          <Button variant="outline" size="lg" className="text-base px-8 py-6 border-border/60 hover:bg-secondary/50 hover-scale">
+            Learn More
+          </Button>
+        </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <ChevronDown className="h-6 w-6 text-muted-foreground" />
+      </motion.div>
     </section>
   );
 };
