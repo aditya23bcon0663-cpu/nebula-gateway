@@ -14,36 +14,66 @@ const features = [
     title: "Blazing Performance",
     description:
       "Sub-millisecond response times powered by edge computing and intelligent caching across every node.",
+    details: [
+      "Global CDN with 200+ edge locations for near-zero latency",
+      "Smart caching layers that adapt to traffic patterns automatically",
+      "Hardware-accelerated packet processing for maximum throughput",
+    ],
   },
   {
     icon: Shield,
     title: "Zero-Trust Security",
     description:
       "End-to-end encryption with biometric verification and AI-driven threat detection in real time.",
+    details: [
+      "AES-256 encryption at rest and TLS 1.3 in transit",
+      "Continuous identity verification with multi-factor authentication",
+      "AI anomaly detection that blocks threats before they reach your network",
+    ],
   },
   {
     icon: Globe,
     title: "Worldwide Infrastructure",
     description:
       "70+ data centers spanning six continents with automatic geo-routing and instant failover.",
+    details: [
+      "Anycast routing directs users to the nearest healthy node",
+      "99.999% uptime SLA backed by redundant multi-region architecture",
+      "Automated disaster recovery with sub-second failover switching",
+    ],
   },
   {
     icon: Layers,
     title: "Infinite Scalability",
     description:
       "Elastic resources that scale from zero to millions of requests — pay only for what you use.",
+    details: [
+      "Serverless auto-scaling with no cold starts or manual provisioning",
+      "Horizontal scaling across thousands of containers in seconds",
+      "Usage-based billing so you never pay for idle capacity",
+    ],
   },
   {
     icon: Cpu,
     title: "AI-Powered Analytics",
     description:
       "Deep network insights with machine-learning models that predict bottlenecks before they happen.",
+    details: [
+      "Predictive traffic modeling that forecasts load spikes hours ahead",
+      "Automated root-cause analysis reduces MTTR by up to 80%",
+      "Custom ML pipelines you can train on your own telemetry data",
+    ],
   },
   {
     icon: BarChart3,
     title: "Real-Time Monitoring",
     description:
       "Live dashboards with granular metrics, custom alerts, and full observability across your stack.",
+    details: [
+      "Sub-second metric ingestion with infinite cardinality support",
+      "Customisable alert rules with multi-channel notifications",
+      "Distributed tracing and log correlation in a single pane of glass",
+    ],
   },
 ];
 
