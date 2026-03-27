@@ -138,12 +138,20 @@ const Features = () => {
                 <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:border-primary/40 transition-all duration-300 group-hover:shadow-[0_0_20px_hsl(var(--primary)/0.25)]">
                   <f.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-display font-semibold mb-3">
+                <h3 className="text-lg font-display font-semibold mb-2">
                   {f.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   {f.description}
                 </p>
+                <ul className="space-y-2">
+                  {f.details.map((d, i) => (
+                    <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground/80 leading-relaxed">
+                      <span className="mt-1.5 w-1 h-1 rounded-full bg-primary shrink-0" />
+                      {d}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           ))}
