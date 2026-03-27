@@ -1,12 +1,16 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ParticleNetwork from "@/components/ParticleNetwork";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
+      {/* Particle constellation background */}
+      <ParticleNetwork />
+
       {/* Grid overlay */}
-      <div className="absolute inset-0 grid-pattern opacity-30" />
+      <div className="absolute inset-0 grid-pattern opacity-20" />
 
       {/* Floating orbs */}
       <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-primary/5 blur-3xl animate-float" />
