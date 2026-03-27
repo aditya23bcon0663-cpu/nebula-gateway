@@ -2,7 +2,7 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 const stats = [
-  { value: 12000, suffix: "+", label: "Active Users" },
+  { value: 8738, suffix: "+", label: "Active Users" },
   { value: 99.99, suffix: "%", label: "Uptime SLA", decimals: 2 },
   { value: 50, suffix: "+", label: "Global Regions" },
   { value: 2, suffix: "M+", label: "Requests / sec" },
