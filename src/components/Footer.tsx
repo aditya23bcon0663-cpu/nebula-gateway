@@ -5,7 +5,13 @@ const Footer = () => {
     <footer className="border-t border-border/50 py-12" id="contact">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="font-display font-bold text-xl glow-text">Aselea</div>
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <span className="font-display font-bold text-xl glow-text">Aselea</span>
+            <a href="tel:8979846922" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Phone className="h-3.5 w-3.5" />
+              8979846922
+            </a>
+          </div>
 
           <nav className="flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#about" className="hover:text-foreground transition-colors">About</a>
